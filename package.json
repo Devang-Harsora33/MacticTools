@@ -1,0 +1,49 @@
+{
+  "name": "dodia",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build --turbopack",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@gsap/react": "^2.1.2",
+    "@mui/icons-material": "^7.0.2",
+    "@mui/material": "^7.0.2",
+    "@mui/x-data-grid": "^8.1.0",
+    "@next/third-parties": "^15.3.1",
+    "dayjs": "^1.11.13",
+    "dodia": "file:",
+    "embla-carousel-autoplay": "^8.6.0",
+    "embla-carousel-react": "^8.6.0",
+    "firebase": "^11.6.1",
+    "firebase-admin": "^13.4.0",
+    "framer-motion": "^10.18.0",
+    "gsap": "^3.12.7",
+    "install": "^0.13.0",
+    "lucide-react": "^0.503.0",
+    "next": "^15.3.4",
+    "npm": "^11.3.0",
+    "pnpm": "^10.12.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.5.2",
+    "sass": "^1.87.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^22.15.2",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.1",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.8.3"
+  }
+}

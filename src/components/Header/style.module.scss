@@ -1,0 +1,173 @@
+.header{
+    position: absolute;
+    display: flex;
+    z-index: 1;
+    top: 0;
+    color: #fdfbf7;
+    background: linear-gradient(
+        to bottom,
+        #1b1601ae,          /* Base deep color */
+        #2e271042,        /* Slight lighter mid-point with transparency */
+               /* Warmer, metallic brownish reflection */
+        #e1f0ff00         /* Fading out at bottom */
+      );
+          // background: linear-gradient(to bottom, #273f4fc8, #3e5f7242, #e8f4ff00);
+    // background: linear-gradient(to bottom, #ba7c52a8, #a9856f57, #fff4ed00);
+
+    padding: 0px 35px;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: 300;
+    box-sizing: border-box;
+    align-items: center;
+    font-family: sf-pro-display, sans-serif;
+    @media screen and (max-width: 768px) {
+        padding: 0px 3px;
+        
+      }
+    .logo{
+        display: flex;
+        cursor: pointer;
+        
+        p{
+            margin: 0px;
+            transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+        }
+        .name{
+            display: flex;
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+            margin-left: 5px;
+            transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+            p{
+                position: relative;
+                transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+                &:nth-of-type(2){
+                    padding-left: 0.3em;
+                }
+                &:nth-of-type(3){
+                    position: absolute;
+                    left: 120px;
+                    padding-left: 0.3em;
+                }
+            }
+        }
+        &:hover{
+            .copyright{
+                transform: rotate(360deg);
+            }
+            .name{
+                padding-right: 30px;
+                .codeBy{
+                    transform: translateX(-100%);
+                }
+                .dennis{
+                    transform: translateX(-65px);
+                }
+                .snellenberg{
+                    transform: translateX(-65px);
+                }
+            }
+        }
+    }
+    .nav{
+        display: flex;
+        align-items: center;
+
+        .el{
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 1;
+            padding: 15px;
+            cursor: pointer;
+            &:hover{
+                .indicator{
+                    transform: scale(1);
+                }
+            }
+            @media screen and (max-width: 768px) {
+                
+                padding:  10px;
+                
+              }
+            .indicator{
+                position: absolute;
+                width: 5px;
+                height: 5px;
+                top: 45px;
+                left: 50%;
+                background-color: #fdfbf7;
+                border-radius: 50%;
+                transform: scale(0) translateX(-50%);
+                transition: transform 0.2s cubic-bezier(0.76, 0, 0.24, 1);
+            }
+        }
+        a{
+            cursor: pointer;
+        }
+    } 
+}
+.headerButtonContainer{
+    transform: scale(0);
+    position: fixed;
+    right: 0px;
+    z-index: 100;
+
+    .button{
+        position: relative;
+        margin: 20px;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: #917e6a;
+        // color: #fdfbf7;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 99999;
+    }
+    
+    .burger{
+        width: 100%;
+        position: relative;
+        z-index: 99999;
+        &::after, &::before{
+            content: "";
+            display: block;
+            height: 1px;
+            width: 40%;
+            margin: auto;
+            background-color: #fdfbf7;
+            position: relative;
+            transition: transform 0.3s;
+        }
+    
+        &::after{
+            top: -5px;
+        }
+    
+        &::before{
+            top: 5px;
+        }
+    }
+    
+    .burgerActive{
+    
+        &::after{
+            transform: rotate(45deg);
+            top: -1px;
+            z-index: 99999;
+        }
+    
+        &::before{
+            transform: rotate(-45deg);
+            top: 0px;
+            z-index: 99999;
+        }
+        
+    }
+}
+
