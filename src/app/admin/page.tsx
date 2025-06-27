@@ -66,12 +66,13 @@ export default function LoginPage() {
           position: "absolute",
           top: 0,
           left: 0,
-          width: "100%",
-          height: "100%",
-          backgroundImage: "url('/Images/logo_6.png')",
+          width: "100vw",
+          height: "100vh",
+          backgroundImage:
+            "url('https://firebasestorage.googleapis.com/v0/b/mactictools-28453.firebasestorage.app/o/assets%2Fbg_cover2.webp?alt=media&token=f0cef767-a5fc-4d02-b16d-32d177893426')",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          filter: "blur(2px)",
+          filter: "blur(1px)",
           zIndex: 0,
         }}
       />
