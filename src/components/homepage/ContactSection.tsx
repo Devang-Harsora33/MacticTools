@@ -53,7 +53,7 @@ const ContactSection = () => {
           <div className="w-full lg:w-1/2 flex justify-center">
             <div className="relative w-full aspect-[3/3] max-w-lg rounded-xl overflow-hidden shadow-lg bg-[#f7ecd9]">
               <Image
-                src="/images/homepage6.jpg" // Placeholder image
+                src="https://firebasestorage.googleapis.com/v0/b/mactictools-28453.firebasestorage.app/o/assets%2Fhomepage6.webp?alt=media&token=5fddae6e-c475-479f-8a3c-e874fdc1b1cf" // Placeholder image
                 alt="Contact Mactic"
                 fill
                 className="object-cover"

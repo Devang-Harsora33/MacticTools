@@ -73,7 +73,7 @@ export const AboutSection = () => {
         <div className="w-full lg:w-1/2 flex justify-center">
           <div className="relative w-full aspect-[3/3] max-w-xl rounded-xl overflow-hidden shadow-lg">
             <Image
-              src="/images/homepage5.webp"
+              src="https://firebasestorage.googleapis.com/v0/b/mactictools-28453.firebasestorage.app/o/assets%2Fhomepage5.webp?alt=media&token=27021385-56e4-45f4-ba75-32c41749be6a"
               alt="Tools on table"
               fill
               className="object-cover"

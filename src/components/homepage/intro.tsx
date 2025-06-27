@@ -64,7 +64,9 @@ export default function Intro() {
     >
       <motion.div style={{ y, opacity }} className="relative h-full">
         <Image
-          src={"/images/bg_cover4.webp"}
+          src={
+            "https://firebasestorage.googleapis.com/v0/b/mactictools-28453.firebasestorage.app/o/assets%2Fbg_cover4.webp?alt=media&token=30a78fb1-2da6-4f79-86f5-02ad5a34c912"
+          }
           fill
           alt="Mactic Tools"
           className="intro-image"

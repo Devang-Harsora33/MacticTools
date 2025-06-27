@@ -9,7 +9,7 @@ const VisionSection = () => {
         <div className="w-full lg:w-1/2 flex justify-center">
           <div className="relative w-full md:block hidden aspect-[1/1] max-w-2xl rounded-xl overflow-hidden shadow-lg bg-[#f7ecd9]">
             <Image
-              src="/images/homepage4.jpg" // Placeholder image
+              src="https://firebasestorage.googleapis.com/v0/b/mactictools-28453.firebasestorage.app/o/assets%2Fhomepage4.webp?alt=media&token=945b411e-2cb8-4d30-8857-7d3192807591" // Placeholder image
               alt="World map with tools"
               fill
               className="object-contain"
@@ -25,7 +25,7 @@ const VisionSection = () => {
           </h2>
           <div className="relative w-full md:hidden block aspect-[1/1] max-w-2xl rounded-xl overflow-hidden shadow-lg bg-[#f7ecd9]">
             <Image
-              src="/images/homepage4.webp"
+              src="https://firebasestorage.googleapis.com/v0/b/mactictools-28453.firebasestorage.app/o/assets%2Fhomepage4.webp?alt=media&token=945b411e-2cb8-4d30-8857-7d3192807591" // Placeholder image
               alt="World map with tools"
               fill
               className="object-contain"

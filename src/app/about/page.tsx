@@ -104,7 +104,10 @@ export default function AboutPage() {
       {/* Parallax Banner */}
       <div
         className="relative h-[100vh] bg-center bg-cover md:bg-fixed"
-        style={{ backgroundImage: "url(/Images/bg_cover2.webp)" }}
+        style={{
+          backgroundImage:
+            "url(https://firebasestorage.googleapis.com/v0/b/mactictools-28453.firebasestorage.app/o/assets%2Fbg_cover2.webp?alt=media&token=f0cef767-a5fc-4d02-b16d-32d177893426)",
+        }}
       >
         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
           <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-[#fdfbf7] text-center px-4 fade-up">
@@ -133,7 +136,7 @@ export default function AboutPage() {
       <div className="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center fade-up">
         <div className="relative h-[300px] sm:h-96 lg:h-[400px]">
           <Image
-            src="/Images/logo.webp"
+            src="https://firebasestorage.googleapis.com/v0/b/mactictools-28453.firebasestorage.app/o/assets%2Flogo.webp?alt=media&token=ae09fef1-71d2-40df-a527-1a39f95e2948"
             alt="Mactic Tools History"
             fill
             className="object-cover rounded-lg"

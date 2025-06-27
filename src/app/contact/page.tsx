@@ -109,7 +109,10 @@ export default function ContactPage() {
       {/* Hero Banner */}
       <div
         className="relative h-[100vh] bg-center bg-cover md:bg-fixed"
-        style={{ backgroundImage: "url(/Images/bg_cover1.webp)" }}
+        style={{
+          backgroundImage:
+            "url(https://firebasestorage.googleapis.com/v0/b/mactictools-28453.firebasestorage.app/o/assets%2Fbg_cover1.webp?alt=media&token=7a13b4d5-f9e6-44aa-b51c-cd042975e4be)",
+        }}
       >
         <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#fdfbf7] text-center px-4 fade-up">
@@ -143,7 +146,7 @@ export default function ContactPage() {
                     Phone
                   </h3>
                   <div className="text-[#73573f] flex flex-col gap-2">
-                    <div className="flex flex-row gap-2 transition-all duration-300 ease-in-out hover:scale-105">
+                    {/* <div className="flex flex-row gap-2 transition-all duration-300 ease-in-out hover:scale-105">
                       Gangar Rajput:
                       <Link href={"tel:+917777883732"}>
                         <p className="hover:underline">+91 7777883732</p>
@@ -152,7 +155,7 @@ export default function ContactPage() {
                       <Link href={"tel:+917777883732"}>
                         <p className="hover:underline">+91 7777883732</p>
                       </Link>
-                    </div>
+                    </div> */}
                     <div className="flex flex-row gap-2 transition-all duration-300 ease-in-out hover:scale-105">
                       Gangar Rajput:{" "}
                       <Link href={"tel:+917777883732"}>

@@ -42,7 +42,7 @@ const InnovationSection = () => {
           <div className="w-full lg:w-1/2 flex justify-center">
             <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden shadow-lg">
               <Image
-                src="/images/homepage2.webp" // Placeholder image
+                src="https://firebasestorage.googleapis.com/v0/b/mactictools-28453.firebasestorage.app/o/assets%2Fhomepage2.webp?alt=media&token=0bb223f9-4959-4edd-88a7-2c3d4557b7ea" // Placeholder image
                 alt="Innovative Tool"
                 fill
                 className="object-cover"

@@ -2,10 +2,10 @@ import React from "react";
 import Image from "next/image";
 
 const productImages = [
-  "/images/product1.webp",
-  "/images/product2.webp",
-  "/images/product3.webp",
-  "/images/product4.webp",
+  "https://firebasestorage.googleapis.com/v0/b/mactictools-28453.firebasestorage.app/o/assets%2Fproduct1.webp?alt=media&token=ef0f2216-40fc-40c9-b563-f584e3c4d7bd",
+  "https://firebasestorage.googleapis.com/v0/b/mactictools-28453.firebasestorage.app/o/assets%2Fproduct2.webp?alt=media&token=ca296c9c-ea87-4503-8dc8-01fd89976137",
+  "https://firebasestorage.googleapis.com/v0/b/mactictools-28453.firebasestorage.app/o/assets%2Fproduct3.webp?alt=media&token=9a759b7e-a695-4a9c-a7ce-721ea5b6733e",
+  "https://firebasestorage.googleapis.com/v0/b/mactictools-28453.firebasestorage.app/o/assets%2Fproduct4.webp?alt=media&token=f8910cb6-15c9-466c-8919-551e4cc7e8fe",
 ];
 
 const ProductRangeSection = () => {

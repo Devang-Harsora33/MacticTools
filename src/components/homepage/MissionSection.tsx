@@ -35,7 +35,7 @@ const MissionSection = () => {
         <div className="w-full lg:w-1/2 flex justify-center order-2 lg:order-1">
           <div className="relative w-full md:block hidden aspect-[9/12] max-w-lg rounded-xl overflow-hidden shadow-lg">
             <Image
-              src="/images/homepage3.webp" // Placeholder image
+              src="https://firebasestorage.googleapis.com/v0/b/mactictools-28453.firebasestorage.app/o/assets%2Fhomepage3.webp?alt=media&token=3edd7f4f-c248-4749-8caa-61b6e4720fae" // Placeholder image
               alt="Craftsman at work"
               fill
               className="object-cover"
@@ -50,7 +50,7 @@ const MissionSection = () => {
           </h2>
           <div className="relative w-full block md:hidden aspect-[9/12] rounded-xl overflow-hidden shadow-lg">
             <Image
-              src="/images/homepage3.jpg" // Placeholder image
+              src="https://firebasestorage.googleapis.com/v0/b/mactictools-28453.firebasestorage.app/o/assets%2Fhomepage3.webp?alt=media&token=3edd7f4f-c248-4749-8caa-61b6e4720fae" // Placeholder image
               alt="Craftsman at work"
               fill
               className="object-cover"

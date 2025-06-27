@@ -31,7 +31,7 @@ const ExploreSection = () => {
       <div className="flex-1 flex items-center justify-center w-full min-h-[220px] sm:min-h-[300px] md:min-h-[350px] lg:min-h-[400px] relative">
         <div className="w-full h-[220px] sm:h-[300px] md:h-[350px] lg:h-[400px] max-w-xs sm:max-w-2xl md:max-w-2xl relative">
           <Image
-            src="/images/homepage.webp"
+            src="https://firebasestorage.googleapis.com/v0/b/mactictools-28453.firebasestorage.app/o/assets%2Fhomepage.webp?alt=media&token=3730ccda-6872-4768-bb26-5991af29efd8"
             alt="Workshop"
             fill
             className="object-cover rounded-lg shadow-lg"
