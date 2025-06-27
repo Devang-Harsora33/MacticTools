@@ -65,7 +65,7 @@ export default function Intro() {
       <motion.div style={{ y, opacity }} className="relative h-full">
         <Image
           src={
-            "https://firebasestorage.googleapis.com/v0/b/mactictools-28453.firebasestorage.app/o/assets%2Fbg_cover4.webp?alt=media&token=30a78fb1-2da6-4f79-86f5-02ad5a34c912"
+            "https://firebasestorage.googleapis.com/v0/b/mactictools-28453.firebasestorage.app/o/assets%2Fbg_cover2.webp?alt=media&token=c6272918-eab3-4448-8b7e-3d8eeef1f822"
           }
           fill
           alt="Mactic Tools"
@@ -79,18 +79,6 @@ export default function Intro() {
           <p ref={secondText}>Freelance Developer -</p>
         </div>
       </div> */}
-      <motion.div
-        className="absolute bottom-[10rem] md:bottom-[18rem] left-[7rem] md:left-[5rem] text-[#fdfbf7] text-2xl sm:text-[3rem] md:text-[4rem] font-sf-pro-semibold opacity-70 tracking-wide z-10"
-        style={{ y }}
-      >
-        MODERN
-      </motion.div>
-      <motion.div
-        className="absolute bottom-[10rem] md:bottom-[18rem] right-[7rem] md:right-[5rem] text-[#fdfbf7] text-2xl sm:text-[3rem] md:text-[4rem] font-sf-pro-semibold opacity-70 tracking-wide z-10"
-        style={{ y }}
-      >
-        POWER
-      </motion.div>
       {/* Product Showcase */}
       {/* <motion.div
         ref={productRef}

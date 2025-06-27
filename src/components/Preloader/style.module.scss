@@ -16,6 +16,20 @@
       fill: #fdfbf7;
     }
   }
+  .logoContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    margin-bottom: 80px;
+    margin-top: -150px;
+  }
+  .logo {
+    object-fit: contain;
+    max-width: 300px;
+    max-height: 300px;
+  }
   p {
     display: flex;
     color: #73573f;
@@ -23,6 +37,7 @@
     align-items: center;
     position: absolute;
     z-index: 1;
+    margin-top: 120px;
     span {
       display: block;
       width: 10px;

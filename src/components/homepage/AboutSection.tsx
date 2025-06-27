@@ -2,19 +2,70 @@
 import React, { useLayoutEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const AboutSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // Initial fade up animation for all elements
-      gsap.from(".fade-up", {
-        y: 40,
+      // Fade up animation for heading
+      gsap.from(".about-heading", {
+        y: 50,
         opacity: 0,
         duration: 1,
-        stagger: 0.2,
         ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".about-heading",
+          start: "top 80%",
+          end: "top 20%",
+          toggleActions: "play none none reverse",
+        },
+      });
+
+      // Fade up animation for main paragraph
+      gsap.from(".about-main-text", {
+        y: 30,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".about-main-text",
+          start: "top 85%",
+          end: "top 15%",
+          toggleActions: "play none none reverse",
+        },
+      });
+
+      // Slide in animation for image
+      gsap.from(".about-image", {
+        x: 50,
+        opacity: 0,
+        scale: 0.9,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".about-image",
+          start: "top 80%",
+          end: "top 20%",
+          toggleActions: "play none none reverse",
+        },
+      });
+
+      // Fade up animation for bottom paragraph
+      gsap.from(".about-bottom-text", {
+        y: 30,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".about-bottom-text",
+          start: "top 90%",
+          end: "top 10%",
+          toggleActions: "play none none reverse",
+        },
       });
 
       // Parallax effect for the image
@@ -52,14 +103,17 @@ export const AboutSection = () => {
   }, []);
 
   return (
-    <section className="w-full bg-[#3a3a3a] py-12 px-4 sm:px-8 lg:px-20 flex flex-col items-center">
+    <section
+      ref={sectionRef}
+      className="w-full bg-[#3a3a3a] py-12 px-4 sm:px-8 lg:px-20 flex flex-col items-center"
+    >
       <div className="w-full max-w-screen-xl mx-auto flex flex-col lg:flex-row items-center gap-10">
         {/* Left: Heading and paragraph */}
         <div className="w-full lg:w-1/2 flex flex-col justify-center">
-          <h2 className="text-5xl font-bold text-[#fdfbf7] mb-6 text-left">
+          <h2 className="about-heading text-5xl font-bold text-[#fdfbf7] mb-6 text-left">
             About MACTIC: Built for Excellence
           </h2>
-          <p className="text-xl text-[#fdfbf7] text-left max-w-2xl">
+          <p className="about-main-text text-xl text-[#fdfbf7] text-left max-w-2xl">
             At MACTIC, our foundation is built on an unwavering commitment to
             quality. We specialise in crafting and delivering high-performance
             hand tools and robust power tools, meticulously designed to cater to
@@ -71,7 +125,7 @@ export const AboutSection = () => {
         </div>
         {/* Right: Product image */}
         <div className="w-full lg:w-1/2 flex justify-center">
-          <div className="relative w-full aspect-[3/3] max-w-xl rounded-xl overflow-hidden shadow-lg">
+          <div className="about-image relative w-full aspect-[3/3] max-w-xl rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
             <Image
               src="https://firebasestorage.googleapis.com/v0/b/mactictools-28453.firebasestorage.app/o/assets%2Fhomepage5.webp?alt=media&token=27021385-56e4-45f4-ba75-32c41749be6a"
               alt="Tools on table"
@@ -85,7 +139,7 @@ export const AboutSection = () => {
       </div>
       {/* Bottom caption/paragraph */}
       <div className="w-full max-w-screen-xl mx-auto mt-12">
-        <p className="text-xl text-[#fdfbf7] text-left">
+        <p className="about-bottom-text text-xl text-[#fdfbf7] text-left">
           Our goal is straightforward: to provide tools that not only meet but
           exceed expectations, enhancing productivity and guaranteeing
           reliability in every single task. We believe that the right tool can

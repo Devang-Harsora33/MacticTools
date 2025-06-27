@@ -106,10 +106,10 @@ export default function AboutPage() {
         className="relative h-[100vh] bg-center bg-cover md:bg-fixed"
         style={{
           backgroundImage:
-            "url(https://firebasestorage.googleapis.com/v0/b/mactictools-28453.firebasestorage.app/o/assets%2Fbg_cover2.webp?alt=media&token=f0cef767-a5fc-4d02-b16d-32d177893426)",
+            "url(https://firebasestorage.googleapis.com/v0/b/mactictools-28453.firebasestorage.app/o/assets%2Fbg_cover4.webp?alt=media&token=30a78fb1-2da6-4f79-86f5-02ad5a34c912)",
         }}
       >
-        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+        <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
           <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-[#fdfbf7] text-center px-4 fade-up">
             Tools That Work as Hard as You Do.{" "}
           </h1>
@@ -137,7 +137,7 @@ export default function AboutPage() {
         <div className="relative w-full aspect-[2/1.5] md:aspect-[3/3.5] rounded-xl overflow-hidden shadow-lg">
           <Image
             // src="https://firebasestorage.googleapis.com/v0/b/mactictools-28453.firebasestorage.app/o/assets%2Flogo.webp?alt=media&token=ae09fef1-71d2-40df-a527-1a39f95e2948"
-            src="/images/aboutus.webp"
+            src="https://firebasestorage.googleapis.com/v0/b/mactictools-28453.firebasestorage.app/o/assets%2Faboutus.webp?alt=media&token=a88e2f22-9f09-416e-af3d-6394436d626d"
             alt="Mactic Tools History"
             fill
             className="object-cover rounded-lg"

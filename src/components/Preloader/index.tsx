@@ -3,6 +3,7 @@ import styles from "./style.module.scss";
 import { useEffect, useState } from "react";
 import { motion, Variants } from "framer-motion";
 import { opacity, slideUp } from "./anim";
+import Image from "next/image";
 
 const words: string[] = [
   "नमस्ते",
@@ -23,13 +24,14 @@ export default function Introduction() {
       height: 0,
     }
   );
+  const [imageLoaded, setImageLoaded] = useState<boolean>(false);
 
   useEffect(() => {
     setDimension({ width: window.innerWidth, height: window.innerHeight });
   }, []);
 
   useEffect(() => {
-    if (index === words.length - 1) return;
+    if (!imageLoaded || index === words.length - 1) return;
     const timeout = setTimeout(
       () => {
         setIndex(index + 1);
@@ -37,7 +39,7 @@ export default function Introduction() {
       index === 0 ? 1000 : 150
     );
     return () => clearTimeout(timeout);
-  }, [index]);
+  }, [index, imageLoaded]);
 
   const initialPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${
     dimension.height
@@ -69,10 +71,22 @@ export default function Introduction() {
     >
       {dimension.width > 0 && (
         <>
-          <motion.p variants={opacity} initial="initial" animate="enter">
-            <span></span>
-            {words[index]}🙏🏼
-          </motion.p>
+          <div className={styles.logoContainer}>
+            <Image
+              src="https://firebasestorage.googleapis.com/v0/b/mactictools-28453.firebasestorage.app/o/assets%2Flogo.webp?alt=media&token=93a62701-61cf-4090-bc08-ae84a461661d"
+              alt="Mactic Tools Logo"
+              width={350}
+              height={350}
+              className={styles.logo}
+              onLoad={() => setImageLoaded(true)}
+            />
+          </div>
+          {imageLoaded && (
+            <motion.p variants={opacity} initial="initial" animate="enter">
+              <span></span>
+              {words[index]}🙏🏼
+            </motion.p>
+          )}
           <svg>
             <motion.path variants={curve} initial="initial" exit="exit" />
           </svg>
