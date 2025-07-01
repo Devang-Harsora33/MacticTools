@@ -90,13 +90,13 @@ const MissionSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-[#fdfbf7] py-12 px-4 sm:px-8 lg:px-20 flex flex-col items-center"
+      className="w-full bg-[#fdfbf7] py-4 sm:py-12 px-4 sm:px-8 lg:px-20 flex flex-col items-center"
     >
       <div className="w-full flex flex-col lg:flex-row items-center max-w-screen-xl mx-auto gap-10">
         <div className="mission-image w-full lg:w-1/2 flex justify-center order-2 lg:order-1">
           <div className="relative w-full md:block hidden aspect-[9/12] max-w-lg rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
             <Image
-              src="https://firebasestorage.googleapis.com/v0/b/mactictools-28453.firebasestorage.app/o/assets%2Fhomepage3.webp?alt=media&token=3edd7f4f-c248-4749-8caa-61b6e4720fae" // Placeholder image
+              src="https://firebasestorage.googleapis.com/v0/b/mactictools-28453.firebasestorage.app/o/assets%2Fhomepage7.webp?alt=media&token=2dc8e252-6e11-41ac-b8a8-bd8e0ed76322"
               alt="Craftsman at work"
               fill
               className="object-cover"
@@ -106,12 +106,12 @@ const MissionSection = () => {
           </div>
         </div>
         <div className="w-full lg:w-1/2 flex flex-col gap-8 order-1 lg:order-2">
-          <h2 className="mission-heading text-5xl font-bold text-[#73573f] mb-2 text-center lg:text-left">
+          <h2 className="mission-heading text-4xl sm:text-5xl font-bold text-[#73573f] mb-2 text-center lg:text-left">
             Our Mission: Empowering Craftsmanship
           </h2>
           <div className="relative w-full block md:hidden aspect-[9/12] rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
             <Image
-              src="https://firebasestorage.googleapis.com/v0/b/mactictools-28453.firebasestorage.app/o/assets%2Fhomepage3.webp?alt=media&token=3edd7f4f-c248-4749-8caa-61b6e4720fae" // Placeholder image
+              src="https://firebasestorage.googleapis.com/v0/b/mactictools-28453.firebasestorage.app/o/assets%2Fhomepage7.webp?alt=media&token=2dc8e252-6e11-41ac-b8a8-bd8e0ed76322"
               alt="Craftsman at work"
               fill
               className="object-cover"

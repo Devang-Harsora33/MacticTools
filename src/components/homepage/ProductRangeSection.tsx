@@ -86,10 +86,10 @@ const ProductRangeSection = () => {
       className="w-full bg-[#3a3a3a] py-12 px-4 sm:px-8 lg:px-20 flex flex-col items-center"
     >
       <div className="w-full max-w-screen-xl mx-auto flex flex-col items-center">
-        <h2 className="product-heading text-5xl font-bold text-[#fdfbf7] mb-6 text-center">
+        <h2 className="product-heading text-3xl sm:text-5xl font-bold text-[#fdfbf7] mb-6 text-center">
           Our Product Range: Tools for Every Trade
         </h2>
-        <p className="product-description text-xl text-[#fdfbf7] mb-8 text-center max-w-4xl">
+        <p className="product-description text-lg sm:text-xl text-[#fdfbf7] mb-8 text-center max-w-4xl">
           Whether you&apos;re a seasoned professional or a dedicated DIYer,
           MACTIC offers a comprehensive range of tools tailored to meet diverse
           needs. Our catalogue includes everything from robust power tools for

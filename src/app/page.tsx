@@ -56,7 +56,7 @@ export default function Home() {
       <MissionSection />
       <VisionSection />
       <InnovationSection />
-      <AboutSection />
+      {/* <AboutSection /> */}
       <ProductRangeSection />
       <ContactSection />
       {/* <FeaturedProducts /> */}

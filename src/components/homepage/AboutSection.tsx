@@ -68,17 +68,6 @@ export const AboutSection = () => {
         },
       });
 
-      // Parallax effect for the image
-      gsap.to(".about-image", {
-        y: 20,
-        scrollTrigger: {
-          trigger: ".about-image",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        },
-      });
-
       // Scale animation for service cards on hover
       const serviceCards = document.querySelectorAll(".service-card");
       serviceCards.forEach((card) => {

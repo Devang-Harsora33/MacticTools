@@ -62,7 +62,7 @@ const VisionSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-[#fdfbf7] py-12 px-4 sm:px-8 lg:px-20 flex flex-col items-center"
+      className="w-full bg-[#fdfbf7] py-4 sm:py-12 px-4 sm:px-8 lg:px-20 flex flex-col items-center"
     >
       <div className="w-full flex flex-col lg:flex-row items-center max-w-screen-xl mx-auto gap-10">
         {/* Map Image on the left */}

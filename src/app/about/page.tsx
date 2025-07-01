@@ -103,10 +103,23 @@ export default function AboutPage() {
 
       {/* Parallax Banner */}
       <div
-        className="relative h-[100vh] bg-center bg-cover md:bg-fixed"
+        className="relative h-[100vh] bg-center bg-cover md:bg-fixed md:block hidden"
         style={{
           backgroundImage:
             "url(https://firebasestorage.googleapis.com/v0/b/mactictools-28453.firebasestorage.app/o/assets%2Fbg_cover4.webp?alt=media&token=30a78fb1-2da6-4f79-86f5-02ad5a34c912)",
+        }}
+      >
+        <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+          <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-[#fdfbf7] text-center px-4 fade-up">
+            Tools That Work as Hard as You Do.{" "}
+          </h1>
+        </div>
+      </div>
+      <div
+        className="relative h-[100vh] bg-center bg-cover md:bg-fixed md:hidden block"
+        style={{
+          backgroundImage:
+            "url(https://firebasestorage.googleapis.com/v0/b/mactictools-28453.firebasestorage.app/o/assets%2Fhomepage8.webp?alt=media&token=f1441df3-316c-44ac-9287-cac1b699ef77)",
         }}
       >
         <div className="absolute inset-0 bg-black/20 flex items-center justify-center">

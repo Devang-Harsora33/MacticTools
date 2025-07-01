@@ -64,7 +64,7 @@ const Nav: React.FC = () => {
             );
           })}
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
       <Curve />
     </motion.div>

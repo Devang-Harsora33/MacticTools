@@ -107,7 +107,7 @@ const ContactSection = () => {
         stagger: 0.1,
         ease: "power2.out",
         scrollTrigger: {
-          trigger: ".contact-buttons",
+          trigger: ".contact-button",
           start: "top 90%",
           end: "top 10%",
           toggleActions: "play none none reverse",
@@ -156,10 +156,10 @@ const ContactSection = () => {
           </div>
           {/* Text and buttons on the right */}
           <div className="w-full lg:w-1/2 flex flex-col gap-6 justify-center">
-            <h2 className="contact-heading text-5xl font-bold text-[#73573f] mb-2 text-left">
+            <h2 className="contact-heading text-3xl sm:text-5xl font-bold text-[#73573f] mb-2 text-left">
               Connect with MACTIC: Your Partner in Progress
             </h2>
-            <div className="contact-content flex flex-col gap-4 text-xl text-[#3a3a3a]">
+            <div className="contact-content flex flex-col gap-4 text-lg sm:text-xl text-[#3a3a3a]">
               <p className="contact-paragraph">
                 We believe in fostering strong relationships with our customers.
                 At MACTIC, your satisfaction is our priority, and we are always
@@ -172,11 +172,11 @@ const ContactSection = () => {
                 quality make.
               </p>
             </div>
-            <div className="contact-buttons flex gap-4 mt-2">
-              <button className="contact-button bg-[#3a3a3a] text-[#fdfbf7] text-lg font-semibold rounded-full px-8 py-3 shadow hover:bg-gray-800 transition hover:scale-105">
+            <div className=" flex gap-4 mt-2">
+              <button className=" bg-[#3a3a3a] text-[#fdfbf7] text-lg font-semibold rounded-full px-8 py-3 shadow hover:bg-gray-800 transition hover:scale-105">
                 Contact Us
               </button>
-              <button className="contact-button bg-white text-[#73573f] text-lg font-semibold rounded-full px-8 py-3 border border-gray-400 hover:bg-gray-100 transition hover:scale-105">
+              <button className=" bg-white text-[#73573f] text-lg font-semibold rounded-full px-8 py-3 border border-gray-400 hover:bg-gray-100 transition hover:scale-105">
                 Support Centre
               </button>
             </div>

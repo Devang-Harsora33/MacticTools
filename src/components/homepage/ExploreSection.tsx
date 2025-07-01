@@ -68,8 +68,8 @@ const ExploreSection = () => {
       ref={sectionRef}
       className="w-full bg-[#fdfbf7] flex flex-col lg:flex-row items-center justify-center min-h-[70vh] px-8 py-10"
     >
-      <div className="explore-text flex-1 flex flex-col justify-center px-4 py-10 sm:px-0 lg:py-0 lg:pl-24 text-center lg:text-left items-center lg:items-start">
-        <h1 className="text-5xl font-bold text-[#73573f] mb-6 sm:mb-8 leading-tight">
+      <div className="explore-text flex-1 flex flex-col justify-center px-0 py-10 sm:px-0 lg:py-0 lg:pl-24 text-center lg:text-left items-center lg:items-start">
+        <h1 className="sm:text-5xl text-3xl font-bold text-[#73573f] mb-6 sm:mb-8 leading-tight">
           MACTIC: Precision. Durability. Innovation.
         </h1>
         <p className="text-xl md:text-base text-[#3a3a3a] mb-8 sm:mb-10 max-w-xl">
@@ -111,8 +111,8 @@ const ExploreSection = () => {
           </div>
         </div>
       </div>
-      <div className="explore-image flex-1 flex items-center justify-center w-full min-h-[220px] sm:min-h-[300px] md:min-h-[350px] lg:min-h-[400px] relative">
-        <div className="w-full h-[220px] sm:h-[300px] md:h-[350px] lg:h-[400px] max-w-xs sm:max-w-2xl md:max-w-2xl relative hover:scale-105 transition-transform duration-300">
+      <div className="explore-image flex-1 flex items-center justify-center w-full  relative">
+        <div className="w-full aspect-[16/13] sm:aspect-[16/10] max-w-xs sm:max-w-2xl md:max-w-2xl relative hover:scale-105 transition-transform duration-300">
           <Image
             src="https://firebasestorage.googleapis.com/v0/b/mactictools-28453.firebasestorage.app/o/assets%2Fhomepage.webp?alt=media&token=3730ccda-6872-4768-bb26-5991af29efd8"
             alt="Workshop"

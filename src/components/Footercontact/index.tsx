@@ -69,13 +69,13 @@ export default function FooterContact() {
         <div className={styles.info}>
           <div>
             <span>
-              <h3>Version</h3>
+              <h3 className=" w-fit border-b-2 border-[#fdfbf7] ">Version</h3>
               <p>©2025 Mactic Tools. All rights reserved.</p>
             </span>
           </div>
           <div className="flex  gap-2" style={{ flexDirection: "column" }}>
             <div>
-              <h3>Socials</h3>
+              <h3 className=" w-fit border-b-2 border-[#fdfbf7] ">Socials</h3>
             </div>
 
             <div className="flex flex-col md:flex-row gap-2">

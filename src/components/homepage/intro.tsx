@@ -69,7 +69,16 @@ export default function Intro() {
           }
           fill
           alt="Mactic Tools"
-          className="intro-image"
+          className="intro-image hidden sm:block"
+          style={{ objectFit: "cover", width: "100%", height: "100%" }}
+        />
+        <Image
+          src={
+            "https://firebasestorage.googleapis.com/v0/b/mactictools-28453.firebasestorage.app/o/assets%2Fhomepage5.webp?alt=media&token=27021385-56e4-45f4-ba75-32c41749be6a"
+          }
+          fill
+          alt="Mactic Tools"
+          className="intro-image block sm:hidden"
           style={{ objectFit: "cover", width: "100%", height: "100%" }}
         />
       </motion.div>
