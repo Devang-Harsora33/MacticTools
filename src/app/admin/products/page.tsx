@@ -29,14 +29,20 @@ import {
   GridPaginationModel,
 } from "@mui/x-data-grid";
 import Image from "next/image";
-import { Trash2 } from "lucide-react";
+import { Trash2, Plus, X } from "lucide-react";
 import dayjs from "dayjs";
+
+interface SizeQuantity {
+  size: string;
+  quantity: string;
+}
 
 interface Product {
   id: string;
   name: string;
+  description?: string;
   category: string;
-  inStock: boolean;
+  sizesAndQuantities?: SizeQuantity[];
   createdAt: string;
   updatedAt: string;
   images: string[];
@@ -54,9 +60,9 @@ const ProductsPage = () => {
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [editName, setEditName] = useState("");
+  const [editDescription, setEditDescription] = useState("");
   const [editCategory, setEditCategory] = useState("");
-  const [editImage, setEditImage] = useState("");
-  const [editInStock, setEditInStock] = useState(true);
+  const [editSizesAndQuantities, setEditSizesAndQuantities] = useState<SizeQuantity[]>([]);
 
   const fetchProducts = async () => {
     try {
@@ -66,8 +72,9 @@ const ProductsPage = () => {
         return {
           id: doc.id,
           name: data.name,
+          description: data.description || "",
           category: data.category,
-          inStock: data.inStock,
+          sizesAndQuantities: data.sizesAndQuantities || [],
           createdAt: data.createdAt?.toDate()
             ? dayjs(data.createdAt.toDate()).format("DD-MM-YYYY HH:mm")
             : "",
@@ -91,10 +98,24 @@ const ProductsPage = () => {
   const handleEdit = (product: Product) => {
     setSelectedProduct(product);
     setEditName(product.name);
+    setEditDescription(product.description || "");
     setEditCategory(product.category);
-    setEditImage(product.images?.[0] || "");
-    setEditInStock(product.inStock);
+    setEditSizesAndQuantities(product.sizesAndQuantities || []);
     setEditDialogOpen(true);
+  };
+
+  const addSizeQuantity = () => {
+    setEditSizesAndQuantities((prev) => [...prev, { size: "", quantity: "" }]);
+  };
+
+  const removeSizeQuantity = (index: number) => {
+    setEditSizesAndQuantities((prev) => prev.filter((_, i) => i !== index));
+  };
+
+  const updateSizeQuantity = (index: number, field: "size" | "quantity", value: string) => {
+    setEditSizesAndQuantities((prev) =>
+      prev.map((item, i) => (i === index ? { ...item, [field]: value } : item))
+    );
   };
 
   const handleDelete = (product: Product) => {
@@ -107,19 +128,41 @@ const ProductsPage = () => {
       try {
         // Delete all images from the product's folder in Firebase Storage
         if (selectedProduct.images && selectedProduct.images.length > 0) {
-          // Get the folder path from the first image URL
-          const imagePath = selectedProduct.images[0];
-          const folderPath = imagePath.substring(0, imagePath.lastIndexOf("/"));
-          const folderRef = ref(storage, folderPath);
+          try {
+            // Extract storage path from Firebase Storage URL
+            // URL format: https://firebasestorage.googleapis.com/v0/b/{bucket}/o/{encodedPath}?alt=media&token=...
+            const imageUrl = selectedProduct.images[0];
+            const urlMatch = imageUrl.match(/\/o\/([^?]+)/);
+            
+            if (urlMatch && urlMatch[1]) {
+              // Decode the URL-encoded path
+              const encodedPath = urlMatch[1];
+              const storagePath = decodeURIComponent(encodedPath);
+              
+              // Extract folder path (everything except the filename)
+              const lastSlashIndex = storagePath.lastIndexOf("/");
+              
+              if (lastSlashIndex > 0) {
+                const folderPath = storagePath.substring(0, lastSlashIndex);
+                const folderRef = ref(storage, folderPath);
 
-          // List all files in the folder
-          const result = await listAll(folderRef);
+                // List all files in the folder
+                const result = await listAll(folderRef);
 
-          // Delete each file in the folder
-          await Promise.all(result.items.map((item) => deleteObject(item)));
-
-          // Delete the folder itself
-          await deleteObject(folderRef);
+                // Delete each file in the folder
+                await Promise.all(result.items.map((item) => deleteObject(item)));
+              } else if (storagePath) {
+                // If no folder structure, delete the file directly
+                await deleteObject(ref(storage, storagePath));
+              }
+            } else {
+              // If URL doesn't match expected format, try to extract path directly
+              console.warn("Could not extract storage path from URL, attempting direct deletion");
+            }
+          } catch (error) {
+            console.error("Error deleting images from storage:", error);
+            // Continue with Firestore deletion even if storage deletion fails
+          }
         }
 
         // Delete document from Firestore
@@ -137,9 +180,10 @@ const ProductsPage = () => {
     if (selectedProduct) {
       await updateDoc(doc(db, "products", selectedProduct.id), {
         name: editName,
+        description: editDescription,
         category: editCategory,
-        inStock: editInStock,
-        images: editImage ? [editImage] : [],
+        sizesAndQuantities: editSizesAndQuantities,
+        // Keep images as-is (not editable)
         updatedAt: new Date(),
       });
       setEditDialogOpen(false);
@@ -187,7 +231,7 @@ const ProductsPage = () => {
     },
     { field: "name", headerName: "Name", flex: 1 },
     { field: "category", headerName: "Category", flex: 1 },
-    { field: "inStock", headerName: "In Stock", flex: 1, type: "boolean" },
+    // { field: "inStock", headerName: "In Stock", flex: 1, type: "boolean" },
     { field: "createdAt", headerName: "Created At", flex: 1 },
     { field: "updatedAt", headerName: "Updated At", flex: 1 },
     {
@@ -243,7 +287,7 @@ const ProductsPage = () => {
       <Dialog
         open={editDialogOpen}
         onClose={() => setEditDialogOpen(false)}
-        maxWidth="sm"
+        maxWidth="md"
         sx={{ fontFamily: "SF Pro Display" }}
         fullWidth
       >
@@ -254,11 +298,12 @@ const ProductsPage = () => {
         <DialogContent sx={{ pt: 1, fontFamily: "SF Pro Display" }}>
           <Box display="flex" flexDirection="column" gap={3} mt={1}>
             <TextField
-              label="Name"
+              label="Product Name"
               value={editName}
               onChange={(e) => setEditName(e.target.value)}
               fullWidth
               variant="outlined"
+              required
             />
             <TextField
               label="Category"
@@ -266,24 +311,104 @@ const ProductsPage = () => {
               onChange={(e) => setEditCategory(e.target.value)}
               fullWidth
               variant="outlined"
+              required
             />
-            {/* Optional: Add image URL input back if needed
-      <TextField
-        label="Image URL"
-        value={editImage}
-        onChange={(e) => setEditImage(e.target.value)}
-        fullWidth
-        variant="outlined"
-      />
-      */}
-            <Box display="flex" alignItems="center" gap={2}>
-              <Typography variant="body1">In Stock:</Typography>
-              <input
-                type="checkbox"
-                checked={editInStock}
-                onChange={(e) => setEditInStock(e.target.checked)}
-                style={{ transform: "scale(1.3)", cursor: "pointer" }}
-              />
+            <TextField
+              label="Description"
+              value={editDescription}
+              onChange={(e) => setEditDescription(e.target.value)}
+              fullWidth
+              variant="outlined"
+              multiline
+              rows={4}
+              required
+            />
+
+            {/* Sizes and Quantities Section */}
+            <Box>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  mb: 2,
+                }}
+              >
+                <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
+                  Sizes and Quantities
+                </Typography>
+                <Button
+                  variant="outlined"
+                  size="small"
+                  startIcon={<Plus size={16} />}
+                  onClick={addSizeQuantity}
+                  sx={{
+                    textTransform: "none",
+                  }}
+                >
+                  Add
+                </Button>
+              </Box>
+
+              {editSizesAndQuantities.length === 0 ? (
+                <Box
+                  sx={{
+                    p: 2,
+                    border: "1px dashed #d0d0d0",
+                    borderRadius: 2,
+                    textAlign: "center",
+                    color: "#999",
+                  }}
+                >
+                  <Typography variant="body2">
+                    No sizes and quantities added. Click &quot;Add&quot; to add one.
+                  </Typography>
+                </Box>
+              ) : (
+                <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+                  {editSizesAndQuantities.map((item, index) => (
+                    <Box
+                      key={index}
+                      sx={{
+                        display: "flex",
+                        gap: 2,
+                        alignItems: "flex-start",
+                      }}
+                    >
+                      <TextField
+                        label="Size"
+                        fullWidth
+                        value={item.size}
+                        onChange={(e) =>
+                          updateSizeQuantity(index, "size", e.target.value)
+                        }
+                        placeholder="e.g., Small, Medium, Large"
+                      />
+                      <TextField
+                        label="Quantity"
+                        fullWidth
+                        value={item.quantity}
+                        onChange={(e) =>
+                          updateSizeQuantity(index, "quantity", e.target.value)
+                        }
+                        placeholder="e.g., 10, 20, 30"
+                      />
+                      <IconButton
+                        onClick={() => removeSizeQuantity(index)}
+                        sx={{
+                          color: "error.main",
+                          mt: 1,
+                          "&:hover": {
+                            backgroundColor: "error.light",
+                          },
+                        }}
+                      >
+                        <X size={20} />
+                      </IconButton>
+                    </Box>
+                  ))}
+                </Box>
+              )}
             </Box>
           </Box>
         </DialogContent>

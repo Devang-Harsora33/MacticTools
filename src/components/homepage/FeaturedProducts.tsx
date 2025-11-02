@@ -12,9 +12,9 @@ const products = [
     description:
       "Crafted with precision and attention to detail, our V-grooving profiles are designed to meet the highest standards of aesthetics and performance. Ideal for luxury interiors, architectural elements, and bespoke design projects, these profiles combine strength, style, and versatility.",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2FL_Profile%2F1746455934930-WPRF7844.JPG?alt=media&token=52a71b01-8145-43c7-af8e-898f7c8ec2d7",
+      "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2FL_Profile%2F1746455934930-WPRF7844.JPG?alt=media&token=52a71b01-8145-43c7-af8e-898f7c8ec2d7",
     image2:
-      "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2FL_Profile%2F1746455934929-WPRF7868_optimized-min.jpg?alt=media&token=1ea59368-2068-4550-b994-24eddc4e8049",
+      "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2FL_Profile%2F1746455934929-WPRF7868_optimized-min.jpg?alt=media&token=1ea59368-2068-4550-b994-24eddc4e8049",
     link: "/products/LD5qTulsvSy3xkzo6Z0C",
   },
   {
@@ -22,9 +22,9 @@ const products = [
     name: "T Profile",
     description: "Sleek and minimalistic design for contemporary spaces.",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2FT_Profile%2F1746456347445-WPRF7970.JPG?alt=media&token=dabb1bb5-41fd-4aff-81e1-c8ec3760ab98",
+      "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2FT_Profile%2F1746456347445-WPRF7970.JPG?alt=media&token=dabb1bb5-41fd-4aff-81e1-c8ec3760ab98",
     image2:
-      "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2FT_Profile%2F1746456347446-WPRF7980.JPG?alt=media&token=0d1cf31e-9aa2-4e2d-b08d-f71ce61ce6f7",
+      "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2FT_Profile%2F1746456347446-WPRF7980.JPG?alt=media&token=0d1cf31e-9aa2-4e2d-b08d-f71ce61ce6f7",
     link: "/products/axivwfx5Gd3vRvvP1D99",
   },
   {
@@ -32,9 +32,9 @@ const products = [
     name: "Aluminum Fluted Wave Panel",
     description: "Hand-finished profiles ideal for bespoke designs.",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2FAluminum_Fluted_Wave_Panel%2F1746456445164-WPRF8104.JPG?alt=media&token=fcf7bdeb-9563-43d0-9743-53915ca489e8",
+      "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2FAluminum_Fluted_Wave_Panel%2F1746456445164-WPRF8104.JPG?alt=media&token=fcf7bdeb-9563-43d0-9743-53915ca489e8",
     image2:
-      "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2FAluminum_Fluted_Wave_Panel%2F1746456445164-WPRF8114.JPG?alt=media&token=f94db820-1b21-4d0c-8030-344b759e8fdc",
+      "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2FAluminum_Fluted_Wave_Panel%2F1746456445164-WPRF8114.JPG?alt=media&token=f94db820-1b21-4d0c-8030-344b759e8fdc",
     link: "/products/GjsCdkLvogvnhtci0Z1z",
   },
   {
@@ -42,9 +42,9 @@ const products = [
     name: "Round Flute Aluminum Panel",
     description: "Add definition and sophistication to walls and ceilings.",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2FRound_Flute_Aluminum_Panel%2F1746456493860-WPRF8119.JPG?alt=media&token=d53c4f80-f2e0-4d18-9d59-1fe3762cef5d",
+      "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2FRound_Flute_Aluminum_Panel%2F1746456493860-WPRF8119.JPG?alt=media&token=d53c4f80-f2e0-4d18-9d59-1fe3762cef5d",
     image2:
-      "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2FRound_Flute_Aluminum_Panel%2F1746456493861-WPRF8127.JPG?alt=media&token=62db061e-3bd2-4f2b-a444-20651693767c",
+      "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2FRound_Flute_Aluminum_Panel%2F1746456493861-WPRF8127.JPG?alt=media&token=62db061e-3bd2-4f2b-a444-20651693767c",
     link: "/products/V54IqdiLwvrqDLyc4ymo",
   },
   {
@@ -52,9 +52,9 @@ const products = [
     name: "V-Fluted Panel",
     description: "A perfect blend of strength and aesthetic appeal.",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2FV-Fluted_Panel%2F1746456720829-WPRF8213.JPG?alt=media&token=2c3fd202-c6c7-42aa-9ae3-3ad9925457d4",
+      "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2FV-Fluted_Panel%2F1746456720829-WPRF8213.JPG?alt=media&token=2c3fd202-c6c7-42aa-9ae3-3ad9925457d4",
     image2:
-      "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2FV-Fluted_Panel%2F1746456720829-WPRF8250.JPG?alt=media&token=9497858b-06bb-4878-9e5b-93e0bbf99061",
+      "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2FV-Fluted_Panel%2F1746456720829-WPRF8250.JPG?alt=media&token=9497858b-06bb-4878-9e5b-93e0bbf99061",
     link: "/products/Sj6ppxJZ7PijzOcYztt1",
   },
   {
@@ -62,9 +62,9 @@ const products = [
     name: "U Profile",
     description: "Standout grooves for statement feature walls.",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2FU_Profile%2F1746456146151-WPRF7888.JPG?alt=media&token=71e96c85-dc15-4b30-975e-9da0b24c48bd",
+      "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2FU_Profile%2F1746456146151-WPRF7888.JPG?alt=media&token=71e96c85-dc15-4b30-975e-9da0b24c48bd",
     image2:
-      "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2FU_Profile%2F1746456146152-WPRF7901.JPG?alt=media&token=242f1a90-19a9-4c52-9e97-249c4d70e6cc",
+      "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2FU_Profile%2F1746456146152-WPRF7901.JPG?alt=media&token=242f1a90-19a9-4c52-9e97-249c4d70e6cc",
     link: "/products/Q9JERjCsVvUh9Fn2bXp5",
   },
   {
@@ -72,9 +72,9 @@ const products = [
     name: "Angular Flute Aluminum Panel",
     description: "Soft metallic finish for sophisticated decor themes.",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2FAngular_Flute_Aluminum_Panel%2F1746456540540-WPRF8151.JPG?alt=media&token=feddf8de-80c9-44ab-a1a5-3febeb4964f0",
+      "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2FAngular_Flute_Aluminum_Panel%2F1746456540540-WPRF8151.JPG?alt=media&token=feddf8de-80c9-44ab-a1a5-3febeb4964f0",
     image2:
-      "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2FAngular_Flute_Aluminum_Panel%2F1746456540541-WPRF8139.JPG?alt=media&token=c85580df-c8c2-4434-815a-ac95985fb3c7",
+      "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2FAngular_Flute_Aluminum_Panel%2F1746456540541-WPRF8139.JPG?alt=media&token=c85580df-c8c2-4434-815a-ac95985fb3c7",
     link: "/products/ccl1K3W8SNjvjp8Qmc7C",
   },
   {
@@ -82,9 +82,9 @@ const products = [
     name: "Collar Profile",
     description: "Rich bronze tones for premium design accents.",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2FCollar_Profile%2F1746456895829-WPRF8296.JPG?alt=media&token=a5a6ea30-8b7a-466f-9c8e-6599f563bb66",
+      "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2FCollar_Profile%2F1746456895829-WPRF8296.JPG?alt=media&token=a5a6ea30-8b7a-466f-9c8e-6599f563bb66",
     image2:
-      "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2FCollar_Profile%2F1746456895830-WPRF8289.JPG?alt=media&token=30983886-e795-4812-943a-536f582b5a88",
+      "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2FCollar_Profile%2F1746456895830-WPRF8289.JPG?alt=media&token=30983886-e795-4812-943a-536f582b5a88",
     link: "/products/bEL13smsiPtOlZTX6sqH",
   },
   {
@@ -92,9 +92,9 @@ const products = [
     name: "Piano Panel",
     description: "Engineered for modern luxury and architectural highlights.",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2FPiano_Panel%2F1746456929526-IMG_4989%5B1%5D_compressed.jpg?alt=media&token=7eada31d-13d3-4fe1-824b-e3fde8ad69af",
+      "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2FPiano_Panel%2F1746456929526-IMG_4989%5B1%5D_compressed.jpg?alt=media&token=7eada31d-13d3-4fe1-824b-e3fde8ad69af",
     image2:
-      "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2FPiano_Panel%2F1746456929526-IMG_5003%5B1%5D_compressed.jpg?alt=media&token=e0e050e5-0f00-442b-b172-37da27c2deda",
+      "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2FPiano_Panel%2F1746456929526-IMG_5003%5B1%5D_compressed.jpg?alt=media&token=e0e050e5-0f00-442b-b172-37da27c2deda",
     link: "/products/gyWyxpr4Qr5NE6TzO9sb",
   },
 ];
@@ -188,7 +188,7 @@ const FeaturedProducts: React.FC = () => {
                         <Image
                           src={
                             product.image ||
-                            "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2FL_Profile%2F1746206858134-L_profile%20(1).png?alt=media&token=fc65371b-781b-4880-852a-b275e1138cbd"
+                            "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2FL_Profile%2F1746206858134-L_profile%20(1).png?alt=media&token=fc65371b-781b-4880-852a-b275e1138cbd"
                           }
                           alt={product.name}
                           fill

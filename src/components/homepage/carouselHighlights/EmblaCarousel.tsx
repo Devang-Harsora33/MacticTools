@@ -72,8 +72,8 @@ const EmblaCarouselMain: React.FC<PropType> = ({ options }) => {
             src={
               // autoplayIsPlaying ? "/pause.png" : "/play.png"
               autoplayIsPlaying
-                ? "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2Fassets%2Fpause.png?alt=media&token=0c31835a-3e95-4214-a13a-fa5b1297a0df"
-                : "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2Fassets%2Fplay.png?alt=media&token=cd2e1c5f-9d34-45c5-8acf-61c265044011"
+                ? "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2Fassets%2Fpause.png?alt=media&token=0c31835a-3e95-4214-a13a-fa5b1297a0df"
+                : "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2Fassets%2Fplay.png?alt=media&token=cd2e1c5f-9d34-45c5-8acf-61c265044011"
             }
             alt={autoplayIsPlaying ? "Pause" : "Play"}
             width={30}

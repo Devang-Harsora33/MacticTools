@@ -94,9 +94,9 @@ const MissionSection = () => {
     >
       <div className="w-full flex flex-col lg:flex-row items-center max-w-screen-xl mx-auto gap-10">
         <div className="mission-image w-full lg:w-1/2 flex justify-center order-2 lg:order-1">
-          <div className="relative w-full md:block hidden aspect-[9/12] max-w-lg rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+          <div className="relative w-full md:block hidden aspect-[6/9] max-w-lg rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
             <Image
-              src="https://firebasestorage.googleapis.com/v0/b/mactictools-28453.firebasestorage.app/o/assets%2Fhomepage7.webp?alt=media&token=2dc8e252-6e11-41ac-b8a8-bd8e0ed76322"
+              src="/assets/section2.webp"
               alt="Craftsman at work"
               fill
               className="object-cover"

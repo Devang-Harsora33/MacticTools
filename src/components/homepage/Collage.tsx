@@ -72,14 +72,14 @@ const Collage: React.FC = () => {
       cardHeading2:
         "This machine is used to cut metal sheets into smaller pieces.",
       card1: {
-        img: "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2Fmachines%2Fshearing%2Fshearing_portrait.mp4?alt=media&token=836819b7-0be1-4bb1-97ae-af71c9ab5a44",
+        img: "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2Fmachines%2Fshearing%2Fshearing_portrait.mp4?alt=media&token=836819b7-0be1-4bb1-97ae-af71c9ab5a44",
         text: "It works using a",
         StrongText: "Hydraulic Blade",
         text2:
           " that moves vertically to slice through metal.Perfect for straight-line cuts on SS sheets, mild steel, and aluminum",
       },
       card2: {
-        img: "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2FU_Profile%2F1746456146151-WPRF7888.JPG?alt=media&token=71e96c85-dc15-4b30-975e-9da0b24c48bd",
+        img: "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2FU_Profile%2F1746456146151-WPRF7888.JPG?alt=media&token=71e96c85-dc15-4b30-975e-9da0b24c48bd",
         // img: "/productcollage1.jpg",
         text: "Sheet metal",
         StrongText: "Fabrication Shops",
@@ -87,7 +87,7 @@ const Collage: React.FC = () => {
           " ,Pre-processing of PVD-coated sheets, Panel Sharp Edge cutting for cladding, elevators, and furniture industries with high precision.",
       },
       card3: {
-        img: "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2Fmachines%2Fshearing%2FShearing.png?alt=media&token=099cb8a7-d0ca-4629-8897-d2cd91e2eb3f",
+        img: "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2Fmachines%2Fshearing%2FShearing.png?alt=media&token=099cb8a7-d0ca-4629-8897-d2cd91e2eb3f",
         // img: "/machines/shearing.png",
         text: "A Industrial Solutions",
         StrongText: "(CNC Shearing Machine)",
@@ -100,21 +100,21 @@ const Collage: React.FC = () => {
       cardHeading2:
         "This machine is used to create precise V-shaped grooves on metal sheets — usually stainless steel, aluminum, or brass.",
       card1: {
-        img: "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2Fmachines%2FVgrooving%2FVgrooving_portrait.mp4?alt=media&token=d830019e-aa24-4ccc-a11b-508dbac5d5eb",
+        img: "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2Fmachines%2FVgrooving%2FVgrooving_portrait.mp4?alt=media&token=d830019e-aa24-4ccc-a11b-508dbac5d5eb",
         text: "It allows for clean, sharp bends without deforming the surface, which is essential for",
         StrongText: "Architectural And Decorative Applications.",
         text2:
           " Especially useful when you want to fold thicker sheets cleanly without leaving a visible bend radius",
       },
       card2: {
-        img: "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2Fmachines%2FVgrooving%2FVgrooving.jpg?alt=media&token=67960a87-7984-40a4-be93-d8c12f622ea3",
+        img: "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2Fmachines%2FVgrooving%2FVgrooving.jpg?alt=media&token=67960a87-7984-40a4-be93-d8c12f622ea3",
         // img: "/productcollage2.jpg",
         text: "Interior design elements (e.g., wall panels, lift panels)",
         StrongText: "Modular furniture",
         text2: "  Signage and luxury metal fabrication.",
       },
       card3: {
-        img: "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2Fmachines%2FVgrooving%2FVGrooving.png?alt=media&token=974c2ab3-8c45-4dd2-b585-8328fb5b73c4",
+        img: "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2Fmachines%2FVgrooving%2FVGrooving.png?alt=media&token=974c2ab3-8c45-4dd2-b585-8328fb5b73c4",
         // img: "/machines/vgrooving.png",
         text: "A Industrial Solutions",
         StrongText: "CNC V-Grooving Machine",
@@ -127,13 +127,13 @@ const Collage: React.FC = () => {
       cardHeading2:
         "A bending machine that shapes metal sheets by pressing them into dies.",
       card1: {
-        img: "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2Fmachines%2FBending%2Fbending_portrait%20(2).mp4?alt=media&token=02da9701-430b-49e1-94b8-93a621cec2b1",
+        img: "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2Fmachines%2FBending%2Fbending_portrait%20(2).mp4?alt=media&token=02da9701-430b-49e1-94b8-93a621cec2b1",
         text: "Can create angles like",
         StrongText: "L, U, V, and custom bends.",
         text2: "Controlled via CNC for precise, repeatable bends",
       },
       card2: {
-        img: "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2FL_Profile%2F1746455934929-WPRF7868_optimized-min.jpg?alt=media&token=1ea59368-2068-4550-b994-24eddc4e8049",
+        img: "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2FL_Profile%2F1746455934929-WPRF7868_optimized-min.jpg?alt=media&token=1ea59368-2068-4550-b994-24eddc4e8049",
         // img: "/productcollage3.jpg",
         text: "Manufacturing of ",
         StrongText: "T Pati, U Channel, Angles",
@@ -141,7 +141,7 @@ const Collage: React.FC = () => {
           " from SS sheets Architectural metalwork, signage, electrical enclosures, etc.",
       },
       card3: {
-        img: "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2Fmachines%2FBending%2FBending.png?alt=media&token=73627e0c-13d8-40cb-83a0-f0f0426d9db4",
+        img: "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2Fmachines%2FBending%2FBending.png?alt=media&token=73627e0c-13d8-40cb-83a0-f0f0426d9db4",
         // img: "/machines/bending.png",
         text: "A Industrial Solutions",
         StrongText: "CNC Bending Machine",

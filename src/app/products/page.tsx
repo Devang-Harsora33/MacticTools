@@ -333,7 +333,7 @@ export default function ProductsPage() {
                     src={
                       product.images?.[0] ||
                       product.imageUrl ||
-                      "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2FL_Profile%2F1746206858134-L_profile%20(1).png?alt=media&token=fc65371b-781b-4880-852a-b275e1138cbd"
+                      "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2FL_Profile%2F1746206858134-L_profile%20(1).png?alt=media&token=fc65371b-781b-4880-852a-b275e1138cbd"
                     }
                     alt={product.name}
                     fill

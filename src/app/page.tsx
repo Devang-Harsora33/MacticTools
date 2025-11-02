@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 // import dynamic from "next/dynamic";
 // import Collage from "@/components/homepage/Collage";
 // import FeaturedProducts from "@/components/homepage/FeaturedProducts";
-import SlidingImages from "@/components/SlidingImages";
+// import SlidingImages from "@/components/SlidingImages";
 import { AnimatePresence, motion } from "framer-motion";
 import Preloader from "@/components/Preloader";
 import Intro from "@/components/homepage/intro";
@@ -14,7 +14,7 @@ import InnovationSection from "@/components/homepage/InnovationSection";
 import MissionSection from "@/components/homepage/MissionSection";
 import VisionSection from "@/components/homepage/VisionSection";
 import ProductRangeSection from "@/components/homepage/ProductRangeSection";
-import { AboutSection } from "@/components/homepage/AboutSection";
+// import { AboutSection } from "@/components/homepage/AboutSection";
 import ContactSection from "@/components/homepage/ContactSection";
 // import EmblaCarousel from "@/components/homepage/carouselHighlights";
 

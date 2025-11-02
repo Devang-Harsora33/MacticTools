@@ -6,7 +6,10 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "firebasestorage.googleapis.com",
-        pathname: "/v0/b/dodiabrothers-4527f.firebasestorage.app/o/**",
+      },
+      {
+        protocol: "https",
+        hostname: "*.firebasestorage.googleapis.com",
       },
     ],
     // Limit device sizes to most common breakpoints

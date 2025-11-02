@@ -1,7 +1,7 @@
 // Admin UID configuration
 // Add your admin UIDs here
 export const ADMIN_UIDS = [
-  "jXfszcZP5hf8mBcSx40s9tzTvfy1", // Current admin UID
+  "hvkHbcSP0hauuDjKtJp8e656u5K2", // Current admin UID
   // Add more admin UIDs here as needed
   // "your-new-admin-uid-here",
 ];

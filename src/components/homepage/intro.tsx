@@ -95,10 +95,10 @@ export default function Intro() {
         style={{ y }}
       >
         {[
-          "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2Fselected%2F1.JPG?alt=media&token=5626b739-dc79-469f-a605-f1207d6b3f26",
-          "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2Fselected%2F2.JPG?alt=media&token=9fec9e82-70a6-4d9e-8d0b-02a5cbfb349d",
-          "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2Fselected%2F3.JPG?alt=media&token=68875887-b58f-4c3a-9836-177d96fc0ac3",
-          "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2Fselected%2F4.JPG?alt=media&token=21bd19f7-9eba-40e6-aae3-8b3a950e8d5e",
+          "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2Fselected%2F1.JPG?alt=media&token=5626b739-dc79-469f-a605-f1207d6b3f26",
+          "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2Fselected%2F2.JPG?alt=media&token=9fec9e82-70a6-4d9e-8d0b-02a5cbfb349d",
+          "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2Fselected%2F3.JPG?alt=media&token=68875887-b58f-4c3a-9836-177d96fc0ac3",
+          "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2Fselected%2F4.JPG?alt=media&token=21bd19f7-9eba-40e6-aae3-8b3a950e8d5e",
         ].map((url, index) => (
           <motion.div
             key={index}

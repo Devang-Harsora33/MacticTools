@@ -31,8 +31,8 @@ A modern, responsive product catalog website built with Next.js, TypeScript, Tai
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/dodia-brothers.git
-   cd dodia-brothers
+   git clone https://github.com/yourusername/mactic-brothers.git
+   cd mactic-brothers
    ```
 
 2. Install dependencies:

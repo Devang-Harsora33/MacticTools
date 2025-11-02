@@ -30,11 +30,11 @@ export default function RootLayout({
         <div className="min-h-screen flex flex-col font-sf-pro overflow-hidden">
           <Header />
           <ClientWrapper>
-            <main className="flex-grow pb-[5rem] bg-[#73573f]">{children}</main>
+            <main className="flex-grow pb-[5rem] bg-[#fdfbf7]">{children}</main>
           </ClientWrapper>
           <Footercontact />
           <Footer />
-          <Toaster position="bottom-right" />
+          <Toaster position="top-right" />
         </div>
         <GoogleAnalytics gaId="G-Z100YP056Q" />
       </body>

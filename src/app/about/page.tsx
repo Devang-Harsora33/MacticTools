@@ -218,12 +218,12 @@ export default function AboutPage() {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {[
-            "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2Fselected%2F1.JPG?alt=media&token=5626b739-dc79-469f-a605-f1207d6b3f26",
-            "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2Fselected%2F2.JPG?alt=media&token=9fec9e82-70a6-4d9e-8d0b-02a5cbfb349d",
-            "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2Fselected%2F3.JPG?alt=media&token=68875887-b58f-4c3a-9836-177d96fc0ac3",
-            "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2Fselected%2F4.JPG?alt=media&token=21bd19f7-9eba-40e6-aae3-8b3a950e8d5e",
-            "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2Fselected%2F5.JPG?alt=media&token=0ad1bd31-a2f1-4b95-a741-5045d8a10e7c",
-            "https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2Fselected%2F6.JPG?alt=media&token=023f2924-4966-4609-8e4e-be0c0b0d45f4",
+            "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2Fselected%2F1.JPG?alt=media&token=5626b739-dc79-469f-a605-f1207d6b3f26",
+            "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2Fselected%2F2.JPG?alt=media&token=9fec9e82-70a6-4d9e-8d0b-02a5cbfb349d",
+            "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2Fselected%2F3.JPG?alt=media&token=68875887-b58f-4c3a-9836-177d96fc0ac3",
+            "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2Fselected%2F4.JPG?alt=media&token=21bd19f7-9eba-40e6-aae3-8b3a950e8d5e",
+            "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2Fselected%2F5.JPG?alt=media&token=0ad1bd31-a2f1-4b95-a741-5045d8a10e7c",
+            "https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2Fselected%2F6.JPG?alt=media&token=023f2924-4966-4609-8e4e-be0c0b0d45f4",
           ].map((img, i) => (
             <div
               key={i}
@@ -243,7 +243,7 @@ export default function AboutPage() {
       <div className="flex flex-col items-center pb-[10rem] ">
         <div className="relative w-[100%] h-[70vh] px-2 md:w-[40%] md:h-[100vh] rounded-lg overflow-hidden mb-4">
           <Image
-            src="https://firebasestorage.googleapis.com/v0/b/dodiabrothers-4527f.firebasestorage.app/o/products%2Fdocuments%2FAADHAR%20UDYAM%20FORM%20%20Dodia_page-0001.jpg?alt=media&token=22482ad3-164b-481d-8084-209be6154d4e"
+            src="https://firebasestorage.googleapis.com/v0/b/macticbrothers-4527f.firebasestorage.app/o/products%2Fdocuments%2FAADHAR%20UDYAM%20FORM%20%20mactic_page-0001.jpg?alt=media&token=22482ad3-164b-481d-8084-209be6154d4e"
             alt="Certificate"
             fill
             className="object-cover"

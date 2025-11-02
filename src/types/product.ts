@@ -1,3 +1,8 @@
+export interface SizeQuantity {
+  size: string;
+  quantity: string;
+}
+
 export interface Product {
   id: string;
   name: string;
@@ -13,4 +18,5 @@ export interface Product {
   updatedAt?: Date;
   materialOptions?: string[];
   thickness?: string;
+  sizesAndQuantities?: SizeQuantity[];
 } 

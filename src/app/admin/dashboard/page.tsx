@@ -16,7 +16,7 @@ import {
   Button,
 } from "@mui/material";
 import { DataGrid, GridColDef, GridPaginationModel } from "@mui/x-data-grid";
-import { Trash2 } from "lucide-react";
+import { Trash2, RefreshCw } from "lucide-react";
 
 interface Contact {
   id: string;
@@ -26,6 +26,8 @@ interface Contact {
   createdAt: string;
   phone?: string;
   subject?: string;
+  date?: string | Date | { toDate: () => Date };
+  timestamp?: string | Date | { toDate: () => Date };
 }
 
 export default function AdminDashboard() {
@@ -39,27 +41,93 @@ export default function AdminDashboard() {
 
   const [openDialog, setOpenDialog] = useState(false);
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [refreshing, setRefreshing] = useState<boolean>(false);
+
+  const formatDate = (dateValue: string | Date | { toDate: () => Date } | undefined): string => {
+    if (!dateValue) return "";
+    
+    let date: Date;
+    
+    // Handle different date formats
+    if (dateValue instanceof Date) {
+      date = dateValue;
+    } else if (typeof dateValue === "object" && "toDate" in dateValue && typeof dateValue.toDate === "function") {
+      // Firestore Timestamp
+      date = dateValue.toDate();
+    } else if (typeof dateValue === "string") {
+      // Handle string dates - common formats: MM/DD/YYYY, DD/MM/YYYY, etc.
+      const parts = dateValue.split(/[/-]/);
+      if (parts.length === 3) {
+        // Assume MM/DD/YYYY format (US format from toLocaleDateString)
+        const month = parseInt(parts[0], 10);
+        const day = parseInt(parts[1], 10);
+        const year = parseInt(parts[2], 10);
+        date = new Date(year, month - 1, day);
+        
+        // Validate the date
+        if (
+          date.getFullYear() === year &&
+          date.getMonth() === month - 1 &&
+          date.getDate() === day
+        ) {
+          // Valid date
+        } else {
+          // Try DD/MM/YYYY format instead
+          const day2 = parseInt(parts[0], 10);
+          const month2 = parseInt(parts[1], 10);
+          const year2 = parseInt(parts[2], 10);
+          date = new Date(year2, month2 - 1, day2);
+        }
+      } else {
+        // Try standard Date parsing
+        date = new Date(dateValue);
+        if (isNaN(date.getTime())) {
+          return dateValue; // Return as-is if can't parse
+        }
+      }
+    } else {
+      return String(dateValue);
+    }
+    
+    // Format as DD/MM/YYYY
+    const day = String(date.getDate()).padStart(2, "0");
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+  };
+
+  const fetchContacts = async () => {
+    try {
+      setLoading(true);
+      const querySnapshot = await getDocs(collection(db, "contacts"));
+      const contactsData = querySnapshot.docs.map((doc) => {
+        const data = doc.data() as Omit<Contact, "id">;
+        return {
+          id: doc.id,
+          ...data,
+          date: formatDate(data.date || data.timestamp),
+        };
+      });
+      setContacts(contactsData);
+    } catch (error) {
+      console.error("Error fetching contacts:", error);
+    } finally {
+      setLoading(false);
+      setRefreshing(false);
+    }
+  };
 
   useEffect(() => {
     if (!authLoading && isAdminUser) {
-      const fetchContacts = async () => {
-        try {
-          const querySnapshot = await getDocs(collection(db, "contacts"));
-          const contactsData = querySnapshot.docs.map((doc) => ({
-            id: doc.id,
-            ...(doc.data() as Omit<Contact, "id">),
-          }));
-          setContacts(contactsData);
-        } catch (error) {
-          console.error("Error fetching contacts:", error);
-        } finally {
-          setLoading(false);
-        }
-      };
-
       fetchContacts();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [authLoading, isAdminUser]);
+
+  const handleRefresh = async () => {
+    setRefreshing(true);
+    await fetchContacts();
+  };
 
   // Show loading while checking authentication
   if (authLoading) {
@@ -123,9 +191,30 @@ export default function AdminDashboard() {
 
   return (
     <Box sx={{ paddingTop: 8, paddingBottom: 8 }}>
-      <Typography variant="h4" fontWeight="bold" gutterBottom>
-        Admin Dashboard - Contacts
-      </Typography>
+      <Box display="flex" alignItems="center" justifyContent="space-between" mb={2}>
+        <Typography variant="h4" fontWeight="bold">
+          Admin Dashboard - Contacts
+        </Typography>
+        <IconButton
+          onClick={handleRefresh}
+          disabled={loading || refreshing}
+          color="primary"
+          sx={{
+            "&:hover": {
+              backgroundColor: "action.hover",
+            },
+          }}
+          aria-label="Refresh data"
+        >
+          <RefreshCw
+            size={20}
+            color="white"
+            style={{
+              animation: refreshing ? "spin 1s linear infinite" : "none",
+            }}
+          />
+        </IconButton>
+      </Box>
 
       {loading ? (
         <Box display="flex" justifyContent="center" mt={4}>

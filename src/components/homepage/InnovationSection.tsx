@@ -115,9 +115,9 @@ const InnovationSection = () => {
         <div className="flex flex-col lg:flex-row gap-8 items-center">
           {/* Image on the left */}
           <div className="innovation-image w-full lg:w-1/2 flex justify-center">
-            <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+            <div className="relative w-full aspect-[7/6] rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
               <Image
-                src="https://firebasestorage.googleapis.com/v0/b/mactictools-28453.firebasestorage.app/o/assets%2Fhomepage2.webp?alt=media&token=0bb223f9-4959-4edd-88a7-2c3d4557b7ea" // Placeholder image
+                src="/assets/drillmachine.webp" // Placeholder image
                 alt="Innovative Tool"
                 fill
                 className="object-cover"
