@@ -13,6 +13,7 @@ import {
   CardContent,
   CircularProgress,
   IconButton,
+  MenuItem,
   Paper,
   TextField,
   Typography,
@@ -25,14 +26,32 @@ const AddProduct = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [formData, setFormData] = useState({
-    name: "",
-    description: "",
-    category: "",
-    sizesAndQuantities: [] as { size: string; quantity: string }[],
-    images: [] as File[],
+  name: "",
+  description: "",
+  category: "",
+  customCategory: "",
+  sizesAndQuantities: [] as { size: string; quantity: string }[],
+  images: [] as File[],
   });
+
   const [imagePreviews, setImagePreviews] = useState<string[]>([]);
   const blobUrlsRef = useRef<string[]>([]);
+  const CATEGORY_OPTIONS = [
+  "Abrasives",
+  "Accessories",
+  "Diamond Cup Wheel",
+  "T.C.T. Saw Blade",
+  "Diamond Saw Blade",
+  "Screwdriver Bits",
+  "Drill Bits",
+  "Holesaw",
+  "Fiber Glass Tape",
+  "Caulking Gun",
+  "Levels",
+  "Wire Brushes",
+  "Saw Chain",
+  "Custom",
+];
 
   const addFiles = (files: FileList | File[]) => {
     const fileArray = Array.from(files);
@@ -143,7 +162,6 @@ const AddProduct = () => {
     e.preventDefault();
     setLoading(true);
     setError("");
-
     // Validation
     if (!formData.name.trim()) {
       toast.error("Product name is required");
@@ -187,11 +205,14 @@ const AddProduct = () => {
           return permanentUrl;
         })
       );
-
+      const finalCategory =
+        formData.category === "Custom"
+          ? formData.customCategory.trim()
+          : formData.category;
       const productData = {
         name: formData.name,
         description: formData.description,
-        category: formData.category,
+        category: finalCategory,
         sizesAndQuantities: formData.sizesAndQuantities,
         images: imageUrls,
         createdAt: serverTimestamp(),
@@ -334,30 +355,64 @@ const AddProduct = () => {
                   />
 
                   <TextField
+                    select
                     label="Category"
                     name="category"
                     fullWidth
                     required
                     value={formData.category}
-                    onChange={handleInputChange}
-                    placeholder="e.g., Hand Tools, Power Tools"
+                    onChange={(e) => {
+                      const value = e.target.value;
+                      setFormData((prev) => ({
+                        ...prev,
+                        category: value,
+                        customCategory: value === "Custom" ? prev.customCategory : "",
+                      }));
+                    }}
                     sx={{
                       "& .MuiOutlinedInput-root": {
-                        "& fieldset": {
-                          borderColor: "#d0d0d0",
-                        },
-                        "&:hover fieldset": {
-                          borderColor: "#73573f",
-                        },
-                        "&.Mui-focused fieldset": {
-                          borderColor: "#73573f",
-                        },
+                        "& fieldset": { borderColor: "#d0d0d0" },
+                        "&:hover fieldset": { borderColor: "#73573f" },
+                        "&.Mui-focused fieldset": { borderColor: "#73573f" },
                       },
                       "& .MuiInputLabel-root.Mui-focused": {
                         color: "#73573f",
                       },
                     }}
-                  />
+                  >
+                    {CATEGORY_OPTIONS.map((option) => (
+                      <MenuItem key={option} value={option}>
+                        {option}
+                      </MenuItem>
+                    ))}
+                  </TextField>
+                  {formData.category === "Custom" && (
+                    <TextField
+                      label="Custom Category"
+                      fullWidth
+                      required
+                      value={formData.customCategory}
+                      onChange={(e) =>
+                        setFormData((prev) => ({
+                          ...prev,
+                          customCategory: e.target.value,
+                        }))
+                      }
+                      placeholder="Enter your category"
+                      sx={{
+                        mt: 2,
+                        "& .MuiOutlinedInput-root": {
+                          "& fieldset": { borderColor: "#d0d0d0" },
+                          "&:hover fieldset": { borderColor: "#73573f" },
+                          "&.Mui-focused fieldset": { borderColor: "#73573f" },
+                        },
+                        "& .MuiInputLabel-root.Mui-focused": {
+                          color: "#73573f",
+                        },
+                      }}
+                    />
+                  )}
+
 
                   <Box sx={{ gridColumn: { xs: "1", sm: "1 / -1" } }}>
                     <TextField
