@@ -327,7 +327,7 @@ export default function ProductsPage() {
                 key={product.id}
                 className="group bg-[#fdfbf7] rounded-3xl shadow-lg overflow-hidden w-full max-w-[25rem] transform transition-all duration-500 hover:scale-105 hover:shadow-2xl"
               >
-                <div className="relative h-72 sm:h-80 md:h-96 overflow-hidden">
+                <div className="relative h-[29rem] sm:h-[27rem] md:h-[29rem] overflow-hidden">
                   {/* Default Image */}
                   <Image
                     src={
@@ -337,7 +337,7 @@ export default function ProductsPage() {
                     }
                     alt={product.name}
                     fill
-                    className="object-cover transition-opacity duration-700 opacity-100 group-hover:opacity-0"
+                    className="object-contain transition-opacity duration-700 opacity-100 group-hover:opacity-0"
                   />
 
                   {/* Hover Image */}

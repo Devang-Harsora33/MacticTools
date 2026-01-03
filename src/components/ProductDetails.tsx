@@ -229,7 +229,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                 <div className="embla" ref={emblaRef}>
                   <div className="embla__container">
                     {images.map((image, index) => (
-                      <div className="embla__slide" key={index} style={{ position: 'relative', width: '100%', height: '100%', minHeight: '500px' }}>
+                      <div className="embla__slide" key={index} style={{ position: 'relative', width: '100%', height: '100%', minHeight: '450px' }}>
                         {imageErrors.has(index) ? (
                           <div className="w-full h-full bg-gray-200 flex items-center justify-center min-h-[500px]">
                             <span className="text-gray-400 text-sm">Image not available</span>
@@ -239,7 +239,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                             src={image}
                             alt={`${product.name} - Image ${index + 1}`}
                             fill
-                            className="object-cover"
+                            className="object-contain md:object-cover"
                             sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, 480px"
                             priority={index === 0}
                             quality={85}
