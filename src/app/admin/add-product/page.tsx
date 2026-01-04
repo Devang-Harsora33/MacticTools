@@ -37,21 +37,25 @@ const AddProduct = () => {
   const [imagePreviews, setImagePreviews] = useState<string[]>([]);
   const blobUrlsRef = useRef<string[]>([]);
   const CATEGORY_OPTIONS = [
-  "Abrasives",
-  "Accessories",
-  "Diamond Cup Wheel",
-  "T.C.T. Saw Blade",
-  "Diamond Saw Blade",
-  "Screwdriver Bits",
-  "Drill Bits",
-  "Holesaw",
-  "Fiber Glass Tape",
-  "Caulking Gun",
-  "Levels",
-  "Wire Brushes",
-  "Saw Chain",
-  "Custom",
-];
+    "Abrasives",
+    "Accessories",
+    "Diamond Cup Wheel",
+    "T.C.T. Saw Blade",
+    "Diamond Saw Blade",
+    "Multi Purpose Blade",
+    "Pruning Saw",
+    "Saw Chain",
+    "Cordless Power Tools",
+    "Cord Power Tools",
+    "Screwdriver Bits",
+    "Drill Bits",
+    "Holesaw",
+    "Fiber Glass Tape",
+    "Caulking Gun",
+    "Levels",
+    "Wire Brushes",
+    "Custom",
+  ];
 
   const addFiles = (files: FileList | File[]) => {
     const fileArray = Array.from(files);

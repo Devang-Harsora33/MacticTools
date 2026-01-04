@@ -43,15 +43,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
 
   const images = processImages();
 
-  // Debug: Log images for troubleshooting (remove in production)
-  useEffect(() => {
-    if (images.length > 0) {
-      console.log('Product images loaded:', images.length, images);
-    } else {
-      console.warn('No images found for product:', product.name, 'images:', product.images, 'imageUrl:', product.imageUrl);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [images.length]);
+
 
   // Sync main carousel with thumbnail selection
   useEffect(() => {
@@ -244,12 +236,9 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                             priority={index === 0}
                             quality={85}
                             onError={() => {
-                              console.error(`Image ${index} failed to load:`, image);
                               setImageErrors((prev) => new Set(prev).add(index));
                             }}
-                            onLoad={() => {
-                              console.log(`Image ${index} loaded successfully:`, image);
-                            }}
+
                           />
                         )}
                       </div>
@@ -311,9 +300,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                                onError={() => {
                                  setImageErrors((prev) => new Set(prev).add(idx));
                                }}
-                               onLoad={() => {
-                                 console.log(`Thumbnail ${idx} loaded successfully:`, img);
-                               }}
+
                              />
                            )}
                         </div>

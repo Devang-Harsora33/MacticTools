@@ -59,7 +59,7 @@ export default function Intro() {
 
   return (
     <div
-      className="h-screen overflow-hidden bg-[#282828] relative -mb-[2rem]"
+      className="h-screen overflow-hidden bg-[#140a07] relative -mb-[2rem]"
       ref={container}
     >
       <motion.div style={{ y, opacity }} className="relative h-full">

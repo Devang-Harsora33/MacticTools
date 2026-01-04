@@ -16,6 +16,7 @@ import VisionSection from "@/components/homepage/VisionSection";
 import ProductRangeSection from "@/components/homepage/ProductRangeSection";
 // import { AboutSection } from "@/components/homepage/AboutSection";
 import ContactSection from "@/components/homepage/ContactSection";
+import { Gallery4 } from "@/components/projectCarousel/gallery4"
 // import EmblaCarousel from "@/components/homepage/carouselHighlights";
 
 // const DynamicHighlights = dynamic(
@@ -29,7 +30,6 @@ import ContactSection from "@/components/homepage/ContactSection";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
-
   useEffect(() => {
     const timeout = setTimeout(() => {
       setIsLoading(false);
@@ -52,6 +52,7 @@ export default function Home() {
         {isLoading && <Preloader />}
       </AnimatePresence>
       <Intro />
+      <Gallery4/>
       <ExploreSection />
       <MissionSection />
       <VisionSection />

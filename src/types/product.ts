@@ -14,8 +14,8 @@ export interface Product {
   brand?: string;
   rating?: number;
   stock?: number;
-  createdAt?: Date;
-  updatedAt?: Date;
+  createdAt?: string;
+  updatedAt?: string;
   materialOptions?: string[];
   thickness?: string;
   sizesAndQuantities?: SizeQuantity[];
