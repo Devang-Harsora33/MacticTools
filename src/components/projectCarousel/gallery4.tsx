@@ -105,14 +105,14 @@ const Gallery4 = ({
   }, [carouselApi, items]);
 
   return (
-    <section className="py-32">
+    <section className="pt-20 pb-10">
       <div className="container mx-auto">
         <div className="mb-8 flex items-end justify-between md:mb-14 lg:mb-16">
           <div className="explore-text flex-1 flex flex-col justify-center px-0 py-10 sm:px-0 lg:py-0 lg:pl-24 text-center lg:text-left items-center lg:items-start">
             <h2 className="sm:text-5xl text-3xl font-bold text-[#73573f] mb-6 sm:mb-8 leading-tight">
               {title}
             </h2>
-            <p className="text-xl md:text-base text-[#3a3a3a] mb-8 sm:mb-10 max-w-xl">
+            <p className="text-xl md:text-base text-[#3a3a3a] mb-8 mx-12 sm:mx-0 sm:mb-10 max-w-xl">
               {description}
             </p>
           </div>
