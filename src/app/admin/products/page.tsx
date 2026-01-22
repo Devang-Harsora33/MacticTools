@@ -67,7 +67,7 @@ const ProductsPage = () => {
   const fetchProducts = async () => {
     try {
       const snapshot = await getDocs(collection(db, "products"));
-      const productsData = snapshot.docs.map((doc) => {
+      const productsData = snapshot.docs.map((doc, index) => {
         const data = doc.data();
         return {
           id: doc.id,
@@ -82,7 +82,8 @@ const ProductsPage = () => {
             ? dayjs(data.updatedAt.toDate()).format("DD-MM-YYYY HH:mm")
             : "",
           images: data.images || [],
-        } as Product;
+          srNo: index + 1,
+        } as Product & { srNo: number };
       });
       setProducts(productsData);
     } catch (error) {
@@ -198,13 +199,7 @@ const ProductsPage = () => {
       headerName: "Sr No.",
       width: 90,
       sortable: false,
-      renderCell: (params) => {
-        const index =
-          paginationModel.page * paginationModel.pageSize +
-          (params.api.getSortedRowIds().indexOf(params.id) ?? 0) +
-          1;
-        return index;
-      },
+      renderCell: (params) => params.row.srNo,
     },
     {
       field: "images",
@@ -271,13 +266,13 @@ const ProductsPage = () => {
           <CircularProgress />
         </Box>
       ) : (
-        <Box sx={{ height: 600, width: "100%", mt: 4 }}>
+        <Box sx={{ height: 900, width: "100%", mt: 4 }}>
           <DataGrid
             rows={products}
             columns={columns}
             paginationModel={paginationModel}
             onPaginationModelChange={setPaginationModel}
-            pageSizeOptions={[10, 20, 50]}
+            pageSizeOptions={[10, 20, 50, 100]}
             disableRowSelectionOnClick
           />
         </Box>
