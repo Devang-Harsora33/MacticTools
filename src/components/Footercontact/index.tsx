@@ -85,7 +85,7 @@ export default function FooterContact() {
                 </Link>
               </Magnetic>
               <Magnetic>
-                <Link href={"https://wa.me/917900086062"}>
+                <Link href={"https://wa.me/+917777883732"}>
                   <p>Whatsapp</p>
                 </Link>
               </Magnetic>
