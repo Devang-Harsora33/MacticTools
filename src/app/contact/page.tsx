@@ -222,7 +222,7 @@ export default function ContactPage() {
                         target="_blank"
                       >
                         <span className="hover:underline">
-                          Mactic Tools: Shop No 101, 2nd floor, 46-Shamsi
+                          Mactic Tools: Shop No 101, 1st Floor, 46-Shamsi
                           Heights, Sarang Street, Khokha Bazar Mumbai-400003
                         </span>
                       </Link>

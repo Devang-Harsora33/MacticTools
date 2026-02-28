@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
         target="_blank"
       >
         <p>
-          Mactic Tools: Shop No 101, 2nd floor, 46-Shamsi Heights, Sarang
+          Mactic Tools: Shop No 101, 1st Floor, 46-Shamsi Heights, Sarang
           Street, Khokha Bazar Mumbai-400003
         </p>
       </Link>
