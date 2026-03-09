@@ -11,7 +11,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/projectCarousel/carousel";
-import { getProducts } from "@/app/products/page"; 
+import { fetchProductsFromFirestore } from "@/lib/products-data";
 import Image from "next/image";
 
 export interface Gallery4Item {
@@ -44,7 +44,7 @@ const Gallery4 = ({
 
     const fetchSpecificProducts = async () => {
       try {
-        const allProducts = await getProducts();
+        const allProducts = await fetchProductsFromFirestore();
         
         const desiredNames = [
           "16PCS WOOD HOLESAW SET",

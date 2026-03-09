@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { db, storage } from "@/lib/firebase";
-import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { collection, addDoc, serverTimestamp, query, where, getDocs } from "firebase/firestore";
 import { ref, uploadBytes, getMetadata } from "firebase/storage";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
@@ -20,6 +20,7 @@ import {
 } from "@mui/material";
 import toast from "react-hot-toast";
 import { Package, Image as ImageIcon, Info, Plus, X } from "lucide-react";
+import { revalidateProducts } from "@/utils/revalidate";
 
 const AddProduct = () => {
   const router = useRouter();
@@ -188,6 +189,19 @@ const AddProduct = () => {
       return;
     }
     try {
+      // Check if product with same name already exists
+      const q = query(
+        collection(db, "products"),
+        where("name", "==", formData.name.trim())
+      );
+      const querySnapshot = await getDocs(q);
+
+      if (!querySnapshot.empty) {
+        toast.error("A product with this name already exists");
+        setLoading(false);
+        return;
+      }
+
       const imageUrls = await Promise.all(
         formData.images.map(async (file) => {
           const productFolderName = formData.name.trim().replace(/\s+/g, "_"); // clean folder name
@@ -224,6 +238,7 @@ const AddProduct = () => {
       };
 
       await addDoc(collection(db, "products"), productData);
+      await revalidateProducts();
 
       // Clean up blob URLs after successful submission
       blobUrlsRef.current.forEach((url) => {

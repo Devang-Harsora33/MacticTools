@@ -1,30 +1,38 @@
-import { cache } from 'react';
 import { db } from "@/lib/firebase";
 import { doc, getDoc } from "firebase/firestore";
 import ProductDetails from "@/components/ProductDetails";
 import type { Product } from "@/types/product";
 import { Metadata } from "next";
 import { PageProps } from "@/types/page";
+import { unstable_cache } from "next/cache";
 
-const getProduct = cache(async (id: string): Promise<Product> => {
-  const productRef = doc(db, "products", id);
-  const productSnap = await getDoc(productRef);
+const getProduct = async (id: string): Promise<Product> => {
+  const cachedProduct = unstable_cache(
+    async (id: string) => {
+      const productRef = doc(db, "products", id);
+      const productSnap = await getDoc(productRef);
 
-  if (!productSnap.exists()) {
-    throw new Error("Product not found");
-  }
+      if (!productSnap.exists()) {
+        throw new Error("Product not found");
+      }
 
-  const data = productSnap.data();
+      const data = productSnap.data();
 
-  const product = {
-    id: productSnap.id,
-    ...data,
-    createdAt: data.createdAt?.toDate().toISOString(),
-    updatedAt: data.updatedAt?.toDate().toISOString(),
-  } as unknown as Product;
+      const product = {
+        id: productSnap.id,
+        ...data,
+        createdAt: data.createdAt?.toDate().toISOString(),
+        updatedAt: data.updatedAt?.toDate().toISOString(),
+      } as unknown as Product;
 
-  return product;
-});
+      return product;
+    },
+    [`product-${id}`],
+    { tags: ["products", `product-${id}`] }
+  );
+
+  return cachedProduct(id);
+};
 
 export async function generateMetadata({
   params,

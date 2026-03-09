@@ -7,6 +7,8 @@ import {
   deleteDoc,
   doc,
   updateDoc,
+  query,
+  where,
 } from "firebase/firestore";
 import { db, storage } from "@/lib/firebase";
 import { ref, deleteObject, listAll } from "firebase/storage";
@@ -21,6 +23,7 @@ import {
   DialogTitle,
   TextField,
   IconButton,
+  MenuItem,
 } from "@mui/material";
 import {
   DataGrid,
@@ -31,6 +34,8 @@ import {
 import Image from "next/image";
 import { Trash2, Plus, X } from "lucide-react";
 import dayjs from "dayjs";
+import toast from "react-hot-toast";
+import { revalidateProducts } from "@/utils/revalidate";
 
 interface SizeQuantity {
   size: string;
@@ -62,7 +67,29 @@ const ProductsPage = () => {
   const [editName, setEditName] = useState("");
   const [editDescription, setEditDescription] = useState("");
   const [editCategory, setEditCategory] = useState("");
+  const [editCustomCategory, setEditCustomCategory] = useState("");
   const [editSizesAndQuantities, setEditSizesAndQuantities] = useState<SizeQuantity[]>([]);
+
+  const CATEGORY_OPTIONS = [
+    "Abrasives",
+    "Accessories",
+    "Diamond Cup Wheel",
+    "T.C.T. Saw Blade",
+    "Diamond Saw Blade",
+    "Multi Purpose Blade",
+    "Pruning Saw",
+    "Saw Chain",
+    "Cordless Power Tools",
+    "Cord Power Tools",
+    "Screwdriver Bits",
+    "Drill Bits",
+    "Holesaw",
+    "Fiber Glass Tape",
+    "Caulking Gun",
+    "Levels",
+    "Wire Brushes",
+    "Custom",
+  ];
 
   const fetchProducts = async () => {
     try {
@@ -100,7 +127,16 @@ const ProductsPage = () => {
     setSelectedProduct(product);
     setEditName(product.name);
     setEditDescription(product.description || "");
-    setEditCategory(product.category);
+    
+    const isStandardCategory = CATEGORY_OPTIONS.includes(product.category);
+    if (isStandardCategory && product.category !== "Custom") {
+      setEditCategory(product.category);
+      setEditCustomCategory("");
+    } else {
+      setEditCategory("Custom");
+      setEditCustomCategory(product.category);
+    }
+
     setEditSizesAndQuantities(product.sizesAndQuantities || []);
     setEditDialogOpen(true);
   };
@@ -167,29 +203,60 @@ const ProductsPage = () => {
         }
 
         // Delete document from Firestore
-        await deleteDoc(doc(db, "products", selectedProduct.id));
+        const deletedId = selectedProduct.id;
+        await deleteDoc(doc(db, "products", deletedId));
+        await revalidateProducts(deletedId);
+        
         setDeleteDialogOpen(false);
         setSelectedProduct(null);
         fetchProducts();
+        toast.success("Product deleted successfully");
       } catch (error) {
         console.error("Error deleting product:", error);
+        toast.error("Failed to delete product");
       }
     }
   };
 
   const confirmEdit = async () => {
     if (selectedProduct) {
-      await updateDoc(doc(db, "products", selectedProduct.id), {
-        name: editName,
-        description: editDescription,
-        category: editCategory,
-        sizesAndQuantities: editSizesAndQuantities,
-        // Keep images as-is (not editable)
-        updatedAt: new Date(),
-      });
-      setEditDialogOpen(false);
-      setSelectedProduct(null);
-      fetchProducts();
+      try {
+        // Check if name has changed and if the new name already exists
+        if (editName.trim() !== selectedProduct.name) {
+          const q = query(
+            collection(db, "products"),
+            where("name", "==", editName.trim())
+          );
+          const querySnapshot = await getDocs(q);
+
+          if (!querySnapshot.empty) {
+            toast.error("A product with this name already exists");
+            return;
+          }
+        }
+
+        const productId = selectedProduct.id;
+        const finalCategory = editCategory === "Custom" ? editCustomCategory.trim() : editCategory;
+
+        await updateDoc(doc(db, "products", productId), {
+          name: editName,
+          description: editDescription,
+          category: finalCategory,
+          sizesAndQuantities: editSizesAndQuantities,
+          // Keep images as-is (not editable)
+          updatedAt: new Date(),
+        });
+        
+        await revalidateProducts(productId);
+        
+        setEditDialogOpen(false);
+        setSelectedProduct(null);
+        fetchProducts();
+        toast.success("Product updated successfully");
+      } catch (error) {
+        console.error("Error updating product:", error);
+        toast.error("Failed to update product");
+      }
     }
   };
 
@@ -240,6 +307,7 @@ const ProductsPage = () => {
             variant="outlined"
             size="small"
             onClick={() => handleEdit(params.row)}
+            suppressHydrationWarning
           >
             Edit
           </Button>
@@ -247,6 +315,7 @@ const ProductsPage = () => {
             color="error"
             onClick={() => handleDelete(params.row)}
             size="small"
+            suppressHydrationWarning
           >
             <Trash2 size={18} />
           </IconButton>
@@ -301,13 +370,36 @@ const ProductsPage = () => {
               required
             />
             <TextField
+              select
               label="Category"
               value={editCategory}
-              onChange={(e) => setEditCategory(e.target.value)}
+              onChange={(e) => {
+                const value = e.target.value;
+                setEditCategory(value);
+                if (value !== "Custom") setEditCustomCategory("");
+              }}
               fullWidth
               variant="outlined"
               required
-            />
+            >
+              {CATEGORY_OPTIONS.map((option) => (
+                <MenuItem key={option} value={option}>
+                  {option}
+                </MenuItem>
+              ))}
+            </TextField>
+
+            {editCategory === "Custom" && (
+              <TextField
+                label="Custom Category"
+                value={editCustomCategory}
+                onChange={(e) => setEditCustomCategory(e.target.value)}
+                fullWidth
+                variant="outlined"
+                required
+                placeholder="Enter your category"
+              />
+            )}
             <TextField
               label="Description"
               value={editDescription}

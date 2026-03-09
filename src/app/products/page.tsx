@@ -1,25 +1,16 @@
 import React from "react";
-import { db } from "@/lib/firebase";
-import { collection, getDocs } from "firebase/firestore";
 import { Product } from "@/types/product";
 import ProductsClient from "@/components/ProductsClient";
-import { cache } from "react";
+import { unstable_cache } from "next/cache";
+import { fetchProductsFromFirestore } from "@/lib/products-data";
 
-export const getProducts = cache(async () => {
-  const productsCollection = collection(db, "products");
-  const productsSnapshot = await getDocs(productsCollection);
-  const products = productsSnapshot.docs.map((doc) => {
-    const data = doc.data();
-    const product = {
-      id: doc.id,
-      ...data,
-      createdAt: data.createdAt?.toDate().toISOString(),
-      updatedAt: data.updatedAt?.toDate().toISOString(),
-    };
-    return product as Product;
-  });
-  return products;
-});
+export const getProducts = unstable_cache(
+  async () => {
+    return fetchProductsFromFirestore();
+  },
+  ["products-list"],
+  { tags: ["products"] }
+);
 
 export default async function ProductsPage() {
   const products = await getProducts();
